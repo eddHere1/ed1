@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1a0f0a" />
+    <meta name="description" content="Soul Smiles rewards — earn perks with Diamonique's Mobile Soulfood Kitchen." />
+    <title>Rewards — Diamonique's Mobile Soulfood Kitchen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-sub page-rewards">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="top-bar">
+      <a class="top-bar__brand" href="index.html">Diamonique's</a>
+      <a class="top-bar__call" href="tel:+17579127072">Call</a>
+    </header>
+
+    <main id="main" class="sub-main">
+      <div class="hero-card hero-card--compact">
+        <img
+          class="hero-card__img"
+          src="img/Instagram_files/671785801_18330428644247877_1621544458761310722_n.jpg"
+          width="1080"
+          height="1080"
+          alt="Soul food from the truck"
+          loading="eager"
+          decoding="async"
+        />
+        <div class="hero-card__overlay">
+          <p class="eyebrow eyebrow--on-dark">Soul Smiles rewards</p>
+          <h1 class="hero-card__title">Eat. Earn. Come back.</h1>
+          <p class="hero-card__sub" id="rewards-welcome">Sign in once to personalize this page.</p>
+        </div>
+      </div>
+
+      <section class="panel panel--accent" aria-labelledby="balance-heading">
+        <h2 id="balance-heading" class="panel__title">Your demo balance</h2>
+        <p class="rewards-balance" id="rewards-points" aria-live="polite">0 pts</p>
+        <p class="panel__muted">Sample program for the site — swap in Square, Toast, or your POS later.</p>
+      </section>
+
+      <section class="panel" aria-labelledby="earn-heading">
+        <h2 id="earn-heading" class="panel__title">How you earn</h2>
+        <ul class="step-list">
+          <li><strong>$1 spent</strong> → 1 point (example rate)</li>
+          <li><strong>Curbside pickup</strong> → same points as walk-up</li>
+          <li><strong>Share a story tag</strong> → bonus runs during promos</li>
+        </ul>
+      </section>
+
+      <section class="panel" aria-labelledby="tiers-heading">
+        <h2 id="tiers-heading" class="panel__title">Tiers</h2>
+        <ol class="tier-list">
+          <li class="tier-list__item"><span class="tier-list__name">Bronze</span> 0–199 pts — birthday treat</li>
+          <li class="tier-list__item"><span class="tier-list__name">Silver</span> 200–499 pts — free side on visit #5</li>
+          <li class="tier-list__item"><span class="tier-list__name">Gold</span> 500+ pts — early access to new drops</li>
+        </ol>
+      </section>
+
+      <p class="sub-cta">
+        <a class="btn btn--ghost btn--block" href="deals.html">Browse deals</a>
+      </p>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span class="js-year"></span> Diamonique's Mobile Soulfood Kitchen</p>
+    </footer>
+
+    <nav class="bottom-nav" aria-label="Main">
+      <a class="bottom-nav__link" href="index.html">Home</a>
+      <a class="bottom-nav__link" href="deals.html">Deals</a>
+      <a class="bottom-nav__link bottom-nav__link--current" href="rewards.html" aria-current="page">Rewards</a>
+      <a class="bottom-nav__link" href="signin.html">Sign in</a>
+    </nav>
+
+    <script src="js/site.js" defer></script>
+    <script>
+      (function () {
+        var welcome = document.getElementById("rewards-welcome");
+        var pts = document.getElementById("rewards-points");
+        var stored = "";
+        try {
+          stored = localStorage.getItem("dmsk_guest_email") || "";
+        } catch (e) {}
+        if (welcome) {
+          welcome.textContent = stored
+            ? "Welcome back — we saved your visit under " + stored + "."
+            : "Sign in once to personalize this page.";
+        }
+        var demoPoints = 120;
+        if (stored) {
+          try {
+            var extra = localStorage.getItem("dmsk_points");
+            if (extra != null && !isNaN(Number(extra))) demoPoints = Number(extra);
+            else localStorage.setItem("dmsk_points", String(demoPoints));
+          } catch (e2) {}
+        }
+        if (pts) pts.textContent = stored ? demoPoints + " pts" : "—";
+      })();
+    </script>
+  </body>
+</html>

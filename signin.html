@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1a0f0a" />
+    <meta name="description" content="Sign in to Diamonique's Mobile Soulfood Kitchen rewards and deals." />
+    <title>Sign in — Diamonique's Mobile Soulfood Kitchen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-sub page-signin">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="top-bar">
+      <a class="top-bar__brand" href="index.html">Diamonique's</a>
+      <a class="top-bar__call" href="tel:+17579127072">Call</a>
+    </header>
+
+    <main id="main" class="sub-main">
+      <div class="hero-card hero-card--compact">
+        <img
+          class="hero-card__img"
+          src="img/Instagram_files/577980165_832129609800932_1463234337939954296_n.jpg"
+          width="800"
+          height="800"
+          alt="Diamonique's Mobile Soulfood Kitchen"
+          loading="eager"
+          decoding="async"
+        />
+        <div class="hero-card__overlay">
+          <p class="eyebrow eyebrow--on-dark">Rewards &amp; deals</p>
+          <h1 class="hero-card__title">Sign in</h1>
+          <p class="hero-card__sub">Use your email to see points and member-only specials.</p>
+        </div>
+      </div>
+
+      <section class="panel">
+        <p class="panel__muted form-disclaimer">
+          Demo sign-in for this website only — no password is sent anywhere. Connect a real account system when you’re
+          ready.
+        </p>
+        <form id="signin-form" class="signin-form" novalidate>
+          <label class="field">
+            <span class="field__label">Email</span>
+            <input
+              class="field__input"
+              type="email"
+              id="signin-email"
+              name="email"
+              autocomplete="email"
+              required
+              placeholder="you@example.com"
+            />
+          </label>
+          <label class="field">
+            <span class="field__label">Password</span>
+            <input
+              class="field__input"
+              type="password"
+              id="signin-password"
+              name="password"
+              autocomplete="current-password"
+              placeholder="••••••••"
+            />
+          </label>
+          <button type="submit" class="btn btn--primary btn--block">Sign in</button>
+        </form>
+        <p id="signin-message" class="form-success" hidden role="status"></p>
+      </section>
+
+      <section class="panel panel--accent">
+        <h2 class="panel__title">New here?</h2>
+        <p class="panel__text">After you sign in, visit <a href="rewards.html">Rewards</a> to see how points add up.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; <span class="js-year"></span> Diamonique's Mobile Soulfood Kitchen</p>
+    </footer>
+
+    <nav class="bottom-nav" aria-label="Main">
+      <a class="bottom-nav__link" href="index.html">Home</a>
+      <a class="bottom-nav__link" href="deals.html">Deals</a>
+      <a class="bottom-nav__link" href="rewards.html">Rewards</a>
+      <a class="bottom-nav__link bottom-nav__link--current" href="signin.html" aria-current="page">Sign in</a>
+    </nav>
+
+    <script src="js/site.js" defer></script>
+  </body>
+</html>
